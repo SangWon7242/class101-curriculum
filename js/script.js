@@ -1,18 +1,13 @@
 $(document).ready(function () {
   // Mobile menu toggle
-  $("#mobile-menu-btn").click(function () {
-    const mobileMenu = $("#mobile-menu");
-    const menuBtn = $(this);
+  $("#mobile-menu-btn").click(function (e) {
+    let $this = $(this);
+    let has = $this.hasClass("active");
 
-    mobileMenu.toggleClass("active");
-    menuBtn.toggleClass("active");
-
-    // Change icon
-    const icon = menuBtn.find("i");
-    if (mobileMenu.hasClass("active")) {
-      icon.removeClass("fa-bars").addClass("fa-times");
+    if (has) {
+      $("#mobile-menu").removeClass("active");
     } else {
-      icon.removeClass("fa-times").addClass("fa-bars");
+      $("#mobile-menu").addClass("active");
     }
   });
 
